@@ -1,0 +1,12 @@
+---
+# For use with packer and ansible-local provisioner.
+- hosts: all
+  connection: local
+  sudo: yes
+  roles:
+    - java
+    - python3
+  vars:
+    python3_pip_packages:
+      - boto
+      - awscli

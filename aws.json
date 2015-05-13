@@ -1,0 +1,35 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "name": "ubuntu14lts",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key` }}",
+      "region": "us-east-1",
+      "source_ami": "ami-d65645be",
+      "instance_type": "m3.medium",
+      "ssh_username": "ubuntu",
+      "ami_name": "jenkins-slave-curbix Ubuntu 14.04.2 LTS {{timestamp}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible-local",
+      "playbook_file": "playbook.yml",
+      "role_paths": [
+        "roles/java",
+        "roles/python3"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo apt-get install -y curl git build-essential gradle"
+      ]
+    }
+  ]
+}
