@@ -30,7 +30,6 @@
       "inline": [
         "sudo mkdir -p /var/lib/jenkins",
         "sudo chown ubuntu:ubuntu /var/lib/jenkins",
-        "sudo chown ubuntu:ubuntu /run/docker.sock",
         "sudo apt-get install -y curl git build-essential gradle"
       ]
     }
