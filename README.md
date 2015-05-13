@@ -1,2 +1,2 @@
-# jenkins-slave-curbix
-Jenkins Slave Curbix Packer
+# jenkins-slave-curbix 
+AMI Image for Jenkins Slaves
