@@ -28,6 +28,11 @@
     {
       "type": "shell",
       "inline": [
+        "sudo mkdir -p /var/lib/jenkins",
+        "sudo chown ubuntu:ubuntu /var/lib/jenkins",
+        "curl http://consul.gocurb.internal/v1/kv/jenkins/config/GITHUB_PRIVATE_SSH_KEY?raw > /home/ubuntu/.ssh/id_rsa",
+        "chmod 0400 /home/ubuntu/.ssh/id_rsa",
+        "sudo chown ubuntu:ubuntu /run/docker.sock",
         "sudo apt-get install -y curl git build-essential gradle"
       ]
     }
