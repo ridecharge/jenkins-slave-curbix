@@ -10,7 +10,7 @@
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key` }}",
       "region": "us-east-1",
-      "source_ami": "ami-d65645be",
+      "source_ami": "ami-558f603e",
       "instance_type": "m3.medium",
       "ssh_username": "ubuntu",
       "ami_name": "jenkins-slave-curbix Ubuntu 14.04.2 LTS {{timestamp}}"
